@@ -6,6 +6,7 @@ on:
     branches: [ main, master, develop, stage, release ]
   pull_request:
     branches: [ main, master, develop, stage, release ]
+    paths: pom.xml 
   workflow_dispatch:
 jobs:
   polaris:
