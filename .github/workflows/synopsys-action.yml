@@ -47,6 +47,7 @@ jobs:
         #polaris_reports_sarif_groupSCAIssues: true
         #polaris_reports_sarif_issue_types: 'SCA, SAST'
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        polaris.prComment.severities: "Critical,high, medium,low"
 #    - name: Save Logs
 #      if: always()
 #      uses: actions/upload-artifact@v4
