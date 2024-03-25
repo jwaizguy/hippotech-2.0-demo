@@ -3,9 +3,9 @@
 name: polaris
 on:
   push:
-    branches: [ main, master, develop, stage, release ]
+    branches: [ main, master, develop, stage, default, release ]
   pull_request:
-    branches: [ main, master, develop, stage, release ]
+    branches: [ main, master, develop, stage, default, release ]
   workflow_dispatch:
 jobs:
   polaris:
