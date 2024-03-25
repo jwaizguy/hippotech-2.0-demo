@@ -37,8 +37,8 @@ jobs:
         polaris_assessment_types: 'SAST,SCA'
         # polaris_application_name: JWtest-${{ github.event.repository.name }}
         polaris_application_name: JWtest
-        polaris_project_name: ${{ github.event.repository.name }}
         polaris_branch_parent_name: main
+        polaris_project_name: ${{ github.event.repository.name }}
         polaris_branch_name: ${{ github.event.repository.default_branch}}
         polaris_prComment_enabled: ${{ github.event_name == 'pull_request' && 'true' || 'false' }}
         polaris_reports_sarif_create: ${{ github.event_name != 'pull_request' && 'true' || 'false' }}
