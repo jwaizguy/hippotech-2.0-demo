@@ -6,7 +6,6 @@ on:
     branches: [ main, master, develop, stage, release ]
   pull_request:
     branches: [ main, master, develop, stage, release ]
-    paths: pom.xml 
   workflow_dispatch:
 jobs:
   polaris:
@@ -22,7 +21,7 @@ jobs:
        # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
        node-version: =10.15.0    
     # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
-       cache-dependency-path: ./test  ./blog 
+       cache-dependency-path: ./test/*  ./blog/* 
     - name: pkg install
       run: cd test ; npm install 
     - name: Setup Java JDK
@@ -39,8 +38,6 @@ jobs:
         # polaris_application_name: JWtest-${{ github.event.repository.name }}
         polaris_application_name: JWtest
         polaris_project_name: ${{ github.event.repository.name }}
-        # polaris_project_name: "HelloJava"
-        # polaris_branch_name: main
         polaris_branch_parent_name: main
         polaris_branch_name: jwaizguy_patch-5
         polaris_prComment_enabled: ${{ github.event_name == 'pull_request' && 'true' || 'false' }}
