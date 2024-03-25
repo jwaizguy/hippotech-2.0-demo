@@ -3,9 +3,9 @@
 name: polaris
 on:
   push:
-    branches: [ main, master, develop, stage, release ]
+    branches: [ main, master, develop, stage, default, release ]
   pull_request:
-    branches: [ main, master, develop, stage, release ]
+    branches: [ main, master, develop, stage, default, release ]
   workflow_dispatch:
 jobs:
   polaris:
@@ -21,7 +21,7 @@ jobs:
        # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
        node-version: =10.15.0    
     # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
-       cache-dependency-path: ./test  ./blog 
+       cache-dependency-path: ./test  ./blog
     - name: pkg install
       run: cd test ; npm install 
     - name: Setup Java JDK
@@ -29,7 +29,7 @@ jobs:
       with:
         java-version: 17
         distribution: microsoft 
-    - name: Polaris Scan 2
+    - name: Polaris Scan 3
       uses: synopsys-sig/synopsys-action@v1.8.0
       with:
         polaris_server_url: ${{ vars.POLARIS_SERVERURL }}
@@ -46,6 +46,9 @@ jobs:
         #polaris_reports_sarif_groupSCAIssues: true
         #polaris_reports_sarif_issue_types: 'SCA, SAST'
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        polaris_prComment_severities: "Critical,high, medium,low"
+    - name: test value of default branch
+      run: echo ${{ github.event.repository.default_branch}}
 #    - name: Save Logs
 #      if: always()
 #      uses: actions/upload-artifact@v4
