@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Checkout Source
       uses: actions/checkout@v4
-    - name: Setup Node.js environment 12
+    - name: Setup Node.js environment 
       uses: actions/setup-node@v4.0.2
       with:
        # Set always-auth in npmrc.
@@ -23,7 +23,7 @@ jobs:
     # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
        cache-dependency-path: ./test  ./blog
     - name: pkg install
-      run: cd test ; npm install ; cd ../blog ; npm install
+      run: cd test ; npm install
     - name: Setup Java JDK
       uses: actions/setup-java@v4
       with:
