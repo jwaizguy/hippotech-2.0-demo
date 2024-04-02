@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-node@v4.0.2
       with: 
     # Set always-auth in npmrc.
-    always-auth: # optional, default is false
+        always-auth: # optional, default is false
     # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
-    node-version: >=10.15.0 
+        node-version: >10.15.0
     # File containing the version Spec of the version to use.  Examples: package.json, .nvmrc, .node-version, .tool-versions.
-    node-version-file: package.json
+        node-version-file: package.json
     # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
     architecture: # optional
     # Set this option if you want the action to check for the latest available version that satisfies the version spec.
