@@ -1,6 +1,6 @@
 # example workflow for Polaris scans using the Synopsys Action
 # https://github.com/marketplace/actions/synopsys-action
-name: polaris-demo
+name: polaris-demo-1
 on:
   push:
     branches: [ main, master, develop, stage, release ]
