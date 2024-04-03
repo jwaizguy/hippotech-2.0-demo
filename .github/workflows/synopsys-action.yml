@@ -46,7 +46,7 @@ jobs:
         polaris_reports_sarif_severities: "CRITICAL,HIGH,MEDIUM,LOW"
         polaris_reports_sarif_groupSCAIssues: true
         #polaris_reports_sarif_issue_types: 'SCA, SAST'
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        #github_token: ${{ secrets.GITHUB_TOKEN }}
         polaris_prComment_severities: "Critical,high, medium,low"
     - name: test value of default branch
       run: echo ${{ github.event.repository.default_branch}}
