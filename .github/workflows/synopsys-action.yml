@@ -3,12 +3,12 @@
 name: polaris Demo
 on:
   push:
-    branches: [ main, master, develop, stage, default, release ]
+    branches: [ main, master, develop, stage, default, release, jwaizguy-patch-5 ]
   pull_request:
-    branches: [ main, master, develop, stage, default, release ]
+    branches: [ main, master, develop, stage, default, release,jwaizguy-patch-5 ]
   workflow_dispatch:
 jobs:
-  polaris:
+  Secure-pipelines-with-Actions:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Source
