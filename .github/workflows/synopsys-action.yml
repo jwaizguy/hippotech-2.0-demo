@@ -29,7 +29,7 @@ jobs:
       with:
         java-version: 17
         distribution: microsoft 
-    - name: Polaris Scan 5
+    - name: Polaris Scan 3
       uses: synopsys-sig/synopsys-action@v1.9.0
       with:
         polaris_server_url: ${{ vars.POLARIS_SERVERURL }}
