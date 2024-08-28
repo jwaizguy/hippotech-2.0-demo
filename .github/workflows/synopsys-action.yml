@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Source
-      uses: actions/checkout@v4
+      run: git clone https://waizguy@bitbucket.org/jwpolaris/hippotech-2.0-demo.git
     - name: Setup Node.js environment
       uses: actions/setup-node@v4.0.2
       with:
@@ -30,7 +30,7 @@ jobs:
         java-version: 17
         distribution: microsoft 
     - name: Polaris Scan 3
-      uses: synopsys-sig/synopsys-action@v1.9.0
+      uses: synopsys-sig/synopsys-action@v1.11.0
       with:
         polaris_server_url: ${{ vars.POLARIS_SERVERURL }}
         polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
